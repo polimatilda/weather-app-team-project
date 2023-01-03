@@ -1,0 +1,173 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+body::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/public/images/hatter2.jpg");
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  opacity: 0.75;
+  z-index: -10;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  padding-left: 50%;
+}
+
+input {
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  height: 95%;
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  padding-left: 50px;
+  text-shadow: 2px 2px 2px #aaa8a8;
+}
+
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.search-bar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.527);
+  border-radius: 20px;
+  font-size: 30px;
+  box-shadow: 1px 1px 1px grey;
+}
+
+.showCard {
+  width: 70%;
+  height: 10%;
+  background-color: rgb(240, 235, 235);
+  color: gray;
+  border-radius: 6px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: 35% 35% 30%;
+  grid-template-rows: 100%;
+  align-items: center;
+  font-size: 30px;
+  /* text-align: left; */
+  padding-left: 20px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  animation: showCard 2s ease-in-out;
+  box-shadow: 1px 1px 1px grey;
+}
+
+.city-name {
+  color: #ffffff;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px #aaa8a8;
+}
+
+.search-div {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.changeBackground {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background-color: white;
+}
+
+.changeImage {
+  width: 100%;
+  height: 100vh;
+  /* opacity: 0.75; */
+  filter: brightness(80%);
+  /* filter: saturate(0.2); */
+}
+
+@media only screen and (max-width: 635px) {
+  .showCard {
+    font-size: 20px;
+    margin-bottom: 25px;
+    width: 80%;
+  }
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .city-name {
+    font-size: 40px;
+  }
+  input {
+    height: 70%;
+    font-size: 30px;
+  }
+}
+
+@keyframes showCard {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(50%);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
